@@ -1,10 +1,12 @@
 [Desktop Entry]
-Name=xtrojka
+Name=Xtrojka
 Comment=An X Window System falling blocks game
 Comment[de]=Spiel mit fallenden Steinen
 Comment[fr]=Jeu de blocs qui tombent
+Comment[pl]=Gra Systemu X Window ze spadajÄ…cymi klockami
 Comment[tr]=Düþen bloklarý yerleþtirme oyunu
 Icon=xtrojka.png
 Exec=xtrojka
 Terminal=0
 Type=Application
+# vi: encoding=utf-8
