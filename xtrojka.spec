@@ -4,7 +4,7 @@ Summary(fr):	Jeu de blocs qui tombent
 Summary(tr):	Düþen bloklarý yerleþtirme oyunu
 Name:		xtrojka
 Version:	1.2.3
-Release:	13
+Release:	14
 License:	Distributable
 Group:		X11/Applications/Games
 Group(de):	X11/Aplikacje/Spiele
