@@ -5,7 +5,7 @@ Summary(pl):	Gra w spadaj±ce bloki pod X Window System
 Summary(tr):	Düþen bloklarý yerleþtirme oyunu
 Name:		xtrojka
 Version:	1.2.3
-Release:	16
+Release:	17
 License:	distributable
 Group:		X11/Applications/Games
 Source0:	ftp://sunsite.unc.edu/pub/Linux/games/arcade/tetris/%{name}123.tar.gz
