@@ -22,8 +22,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_mandir		%{_prefix}/man
 
 %description
-The xtrojka game is an X Window System game of falling blocks, like Xjewel
-or Tetris.
+The xtrojka game is an X Window System game of falling blocks, like
+Xjewel or Tetris.
 
 %description -l de
 Ähnlich wie bei xjewels oder tetris, müssen Sie in diesem Spiel die
@@ -32,8 +32,8 @@ Spielfläche von fallenden Blöcken freihalten.
 Eine Variation des süchtigmachenden Klassikers.
 
 %description -l fr
-Ce jeu est similaire à xjewels ou tetris, il faut supprimer les blocs qui
-tombent dans la surface de jeu.
+Ce jeu est similaire à xjewels ou tetris, il faut supprimer les blocs
+qui tombent dans la surface de jeu.
 
 Un variation du jeu classique.
 
