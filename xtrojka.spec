@@ -5,7 +5,7 @@ Summary(pl):	Gra w spadaj±ce bloki pod X Window System
 Summary(tr):	Düþen bloklarý yerleþtirme oyunu
 Name:		xtrojka
 Version:	1.2.3
-Release:	17
+Release:	18
 License:	distributable
 Group:		X11/Applications/Games
 Source0:	ftp://sunsite.unc.edu/pub/Linux/games/arcade/tetris/%{name}123.tar.gz
@@ -14,10 +14,9 @@ Source1:	%{name}.desktop
 Source2:	%{name}.png
 Patch0:		%{name}-make.patch
 Icon:		xtrojka.xpm
-BuildRequires:	Xaw3d-devel
 BuildRequires:	XFree86-devel
+BuildRequires:	Xaw3d-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 The xtrojka game is an X Window System game of falling blocks, like
@@ -50,12 +49,12 @@ yerleþtirmeye yönelik bir oyun.
 %build
 cp -f XTrojka.uk XTrojka
 ./resgen
-%{__make} CFLAGS="%{rpmcflags} -DXPM -DLINUX \
-	-DSCOREFILE='\"/var/games/xtrojka.score\"' -L%%{_libdir}"
+%{__make} \
+	CFLAGS="%{rpmcflags} -DXPM -DLINUX -DSCOREFILE='\"/var/games/xtrojka.score\"' -L/usr/X11R6/%{_lib}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_applnkdir}/Games/Arcade,%{_pixmapsdir}} \
+install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}} \
 	$RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man6,/var/games}
 
 %{__make} install \
@@ -63,7 +62,7 @@ install -d $RPM_BUILD_ROOT{%{_applnkdir}/Games/Arcade,%{_pixmapsdir}} \
 	MANDIR=$RPM_BUILD_ROOT%{_mandir}/man6 \
 	HSFILE=$RPM_BUILD_ROOT/var/games/xtrojka.score
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Games/Arcade
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %clean
@@ -74,5 +73,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(2755,root,games) %{_bindir}/xtrojka
 %attr(0664,root,games) %config(noreplace) %verify(not size mtime md5) /var/games/xtrojka.score
 %{_mandir}/man6/*
-%{_applnkdir}/Games/Arcade/*
+%{_desktopdir}/*.desktop
 %{_pixmapsdir}/*
