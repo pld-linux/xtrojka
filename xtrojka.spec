@@ -15,7 +15,6 @@ Patch0:		xtrojka-make.patch
 Icon:		xtrojka.gif
 BuildRequires:	Xaw3d-devel
 BuildRequires:	XFree86-devel
-BuildRequires:	xpm-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
