@@ -5,10 +5,10 @@
  VERSION=123
  #					where to put the binary
 -TARGET_DIR=/usr/games
-+TARGET_DIR=/usr/X11R6/bin
++TARGET_DIR=/usr/bin
  #					where to put the manpage
 -MANDIR=/usr/local/man/man6
-+MANDIR=/usr/X11R6/man/man6
++MANDIR=/usr/share/man/man6
  #					the location of the highscorefile
 -HSFILE=/fill_in_your_scorefile
 +HSFILE=/var/lib/games/xtrojka.scores
