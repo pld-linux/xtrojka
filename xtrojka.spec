@@ -48,7 +48,7 @@ yerleþtirmeye yönelik bir oyun.
 %build
 cp XTrojka.uk XTrojka
 ./resgen
-%{__make} CFLAGS="%{?debug:-O0 -g}%{!?debug:$RPM_OPT_FLAGS} -DXPM -DLINUX \
+%{__make} CFLAGS="%{rpmcflags} -DXPM -DLINUX \
 	-DSCOREFILE='\"/var/lib/games/xtrojka.score\"' -L%%{_libdir}"
 
 %install
