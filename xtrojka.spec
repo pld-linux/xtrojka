@@ -47,7 +47,7 @@ yerleþtirmeye yönelik bir oyun.
 %build
 cp XTrojka.uk XTrojka
 ./resgen
-%{__make} CFLAGS="$RPM_OPT_FLAGS -DXPM -DLINUX -DSCOREFILE='\"/var/lib/games/xtrojka.scores\"' -L%%{_libdir}"
+%{__make} CFLAGS="$RPM_OPT_FLAGS -DXPM -DLINUX -DSCOREFILE='\"/var/lib/games/xtrojka.score\"' -L%%{_libdir}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -71,8 +71,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/xtrojka
+%attr(2755,root,games) %{_bindir}/xtrojka
 %{_mandir}/man6/*
-%config /var/lib/games/xtrojka.score
+%attr(664,root,games) %config /var/lib/games/xtrojka.score
 %{_applnkdir}/Games/*
 %{_datadir}/pixmaps/*
