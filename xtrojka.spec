@@ -56,7 +56,7 @@ cp -f XTrojka.uk XTrojka
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_applnkdir}/Games,%{_datadir}/pixmaps} \
+install -d $RPM_BUILD_ROOT{%{_applnkdir}/Games/Arcade,%{_pixmapsdir}} \
 	$RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man6,/var/games}
 
 %{__make} install \
@@ -64,8 +64,8 @@ install -d $RPM_BUILD_ROOT{%{_applnkdir}/Games,%{_datadir}/pixmaps} \
 	MANDIR=$RPM_BUILD_ROOT%{_mandir}/man6 \
 	HSFILE=$RPM_BUILD_ROOT/var/games/xtrojka.score
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Games/
-install %{SOURCE2} $RPM_BUILD_ROOT%{_datadir}/pixmaps
+install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Games/Arcade
+install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -75,5 +75,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(2755,root,games) %{_bindir}/xtrojka
 %attr(0664,root,games) %config(noreplace) %verify(not size mtime md5) /var/games/xtrojka.score
 %{_mandir}/man6/*
-%{_applnkdir}/Games/*
+%{_applnkdir}/Games/Arcade/*
 %{_pixmapsdir}/*
