@@ -6,7 +6,7 @@ Copyright:	distributable
 Group:		Amusements/Games
 Source:		ftp://sunsite.unc.edu/pub/Linux/games/arcade/tetris/%{name}123.tar.gz
 Patch:		xtrojka-1.2.3-make.patch
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		/usr/X11R6/man
