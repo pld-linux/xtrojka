@@ -1,0 +1,87 @@
+--- xtrojka123/Makefile.orig	Sat Jul 27 14:05:03 1996
++++ xtrojka123/Makefile	Fri Oct 24 15:20:15 1997
+@@ -10,17 +10,17 @@
+ #					xtrojka version (do not change!)
+ VERSION=123
+ #					where to put the binary
+-TARGET_DIR=/usr/games
++TARGET_DIR=/usr/X11R6/bin
+ #					where to put the manpage
+-MANDIR=/usr/local/man/man6
++MANDIR=/usr/X11R6/man/man6
+ #					the location of the highscorefile
+-HSFILE=/fill_in_your_scorefile
++HSFILE=/var/lib/games/xtrojka.scores
+ #					your favourite packer
+ COMPRESS=gzip -v9
+ #					your favourite c-compiler
+ CC=gcc
+ #					used X libraries
+-XLIBS= -lXaw -lXmu -lXt -lX11 -lXext
++XLIBS= -L/usr/X11R6/lib -lXaw3d -lXmu -lXt -lSM -lICE -lXext -lX11
+ #					some more X libraries
+ RESGEN=./resgen
+ 
+@@ -110,61 +110,6 @@
+ 	cp xtrojka.6 $(MANDIR); chmod go+r xtrojka.6; \
+ 	cp xtrojka $(TARGET_DIR);chmod go+rx xtrojka; \
+ 	touch $(HSFILE); chmod go+rwx $(HSFILE);
+-	
++
+ clean:
+ 	rm -rf tags *.o core xtrojka xtrojka.6 
+-	
+-##############################################################################
+-#
+-#	DEPENDENCIES
+-#
+-
+-_strdefs.h _resdefs.h:	XTrojka 
+-	$(RESGEN)
+-
+-actions.o: actions.c actions.h xtrojka.h debug.h
+-game.o: game.c game.h xtrojka.h sh_main.h sh_stat.h scores.h menu.h menu_tool.h \
+-  debug.h tr_core.h screen.h
+-menu.o: menu.c debug.h xtrojka.h tr_core.h menu.h menu_tool.h game.h sh_main.h
+-menu_tool.o: menu_tool.c xtrojka.h tr_core.h menu_tool.h menu.h debug.h
+-options.o: options.c xtrojka.h debug.h
+-pics.o: pics.c xtrojka.h tr_core.h pics.h window.h debug.h pictures.h \
+-  bitmaps/block0 bitmaps/block1 bitmaps/block2 bitmaps/block3 bitmaps/block4 \
+-  bitmaps/block5 bitmaps/pat1 bitmaps/pat2 bitmaps/pat3 bitmaps/pat4 \
+-  bitmaps/pat5 bitmaps/leftpillar bitmaps/rightpillar bitmaps/new \
+-  bitmaps/title bitmaps/app_icon bitmaps/stat_icon pixmaps/block1 \
+-  pixmaps/block2 pixmaps/block3 pixmaps/block4 pixmaps/block5 \
+-  pixmaps/leftpillar pixmaps/rightpillar
+-preferences.o: preferences.c debug.h xtrojka.h tr_core.h preferences.h 
+-scores.o: scores.c debug.h xtrojka.h tr_core.h scores.h slist.h sh_slist.h \
+-  _strdefs.h
+-screen.o: screen.c screen.h debug.h xtrojka.h tr_core.h
+-sh_main.o: sh_main.c debug.h xtrojka.h tr_core.h screen.h sh_slist.h sh_main.h \
+-  window.h pictures.h bitmaps/block0 bitmaps/block1 bitmaps/block2 \
+-  bitmaps/block3 bitmaps/block4 bitmaps/block5 bitmaps/pat1 bitmaps/pat2 \
+-  bitmaps/pat3 bitmaps/pat4 bitmaps/pat5 bitmaps/leftpillar \
+-  bitmaps/rightpillar bitmaps/new bitmaps/title bitmaps/app_icon \
+-  bitmaps/stat_icon pixmaps/block1 pixmaps/block2 pixmaps/block3 \
+-  pixmaps/block4 pixmaps/block5 pixmaps/leftpillar pixmaps/rightpillar menu.h \
+-  menu_tool.h
+-sh_slist.o: sh_slist.c sh_slist.h xtrojka.h screen.h window.h font.h scores.h \
+-  pictures.h bitmaps/block0 bitmaps/block1 bitmaps/block2 bitmaps/block3 \
+-  bitmaps/block4 bitmaps/block5 bitmaps/pat1 bitmaps/pat2 bitmaps/pat3 \
+-  bitmaps/pat4 bitmaps/pat5 bitmaps/leftpillar bitmaps/rightpillar bitmaps/new \
+-  bitmaps/title bitmaps/app_icon bitmaps/stat_icon pixmaps/block1 \
+-  pixmaps/block2 pixmaps/block3 pixmaps/block4 pixmaps/block5 \
+-  pixmaps/leftpillar pixmaps/rightpillar slist.h debug.h tr_core.h _strdefs.h
+-sh_stat.o: sh_stat.c sh_stat.h debug.h xtrojka.h tr_core.h screen.h window.h \
+-  pictures.h bitmaps/block0 bitmaps/block1 bitmaps/block2 bitmaps/block3 \
+-  bitmaps/block4 bitmaps/block5 bitmaps/pat1 bitmaps/pat2 bitmaps/pat3 \
+-  bitmaps/pat4 bitmaps/pat5 bitmaps/leftpillar bitmaps/rightpillar bitmaps/new \
+-  bitmaps/title bitmaps/app_icon bitmaps/stat_icon pixmaps/block1 \
+-  pixmaps/block2 pixmaps/block3 pixmaps/block4 pixmaps/block5 \
+-  pixmaps/leftpillar pixmaps/rightpillar _strdefs.h
+-slist.o: slist.c debug.h xtrojka.h slist.h scores.h sh_slist.h
+-tr_core.o: tr_core.c tr_core.h
+-window.o: window.c window.h tr_core.h sh_slist.h sh_stat.h debug.h xtrojka.h
+-xtrojka.o: xtrojka.c xtrojka.h scores.h options.h preferences.h sh_slist.h \
+-  sh_stat.h game.h menu_tool.h menu.h window.h pics.h slist.h actions.h debug.h \
+-  tr_core.h _strdefs.h _resdefs.h
+-
