@@ -17,8 +17,6 @@ BuildRequires:	Xaw3d-devel
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 The xtrojka game is an X Window System game of falling blocks, like
