@@ -6,7 +6,7 @@ Summary(tr):	Düþen bloklarý yerleþtirme oyunu
 Name:		xtrojka
 Version:	1.2.3
 Release:	15
-License:	Distributable
+License:	distributable
 Group:		X11/Applications/Games
 Group(de):	X11/Aplikacje/Spiele
 Group(pl):	X11/Aplikacje/Gry
