@@ -1,0 +1,19 @@
+--- xtrojka123/slist.c.orig	1996-07-27 20:05:03.000000000 +0200
++++ xtrojka123/slist.c	2004-04-12 14:45:38.636628704 +0200
+@@ -17,6 +17,7 @@
+ #include <time.h>
+ #include <signal.h>
+ #include <pwd.h>
++#include <errno.h>
+ 
+ #include <X11/Intrinsic.h>
+ #include <X11/Xlib.h>
+@@ -39,8 +40,6 @@
+ extern SCORES old_scores[NUMSCORES];
+ extern SCORES cur;
+ 
+-extern int errno;
+-
+ extern int position;
+ extern GAME_STATE game_state;
+ 
