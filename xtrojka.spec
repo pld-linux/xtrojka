@@ -13,6 +13,7 @@ Source0:	ftp://sunsite.unc.edu/pub/Linux/games/arcade/tetris/%{name}123.tar.gz
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 Patch0:		%{name}-make.patch
+Patch1:		%{name}-errno.patch
 Icon:		xtrojka.xpm
 BuildRequires:	XFree86-devel
 BuildRequires:	Xaw3d-devel
@@ -44,7 +45,8 @@ yerleþtirmeye yönelik bir oyun.
 
 %prep
 %setup -q -n xtrojka123
-%patch -p1
+%patch0 -p1
+%patch1 -p1
 
 %build
 cp -f XTrojka.uk XTrojka
