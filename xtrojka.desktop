@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=xtrojka
+Comment=An X Window System falling blocks game
+Comment[de]=Spiel mit fallenden Steinen
+Comment[fr]=Jeu de blocs qui tombent
+Comment[tr]=Düþen bloklarý yerleþtirme oyunu
+Exec=xtrojka
+Terminal=0
+Type=Application
