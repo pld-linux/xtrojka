@@ -4,15 +4,16 @@ Summary(fr):	Jeu de blocs qui tombent
 Summary(tr):	Düþen bloklarý yerleþtirme oyunu
 Name:		xtrojka
 Version:	1.2.3
-Release:	10
-License:	distributable
-Group:		X11/Games
-Group(pl):	X11/Gry
+Release:	13
+License:	Distributable
+Group:		X11/Applications/Games
+Group(de):	X11/Aplikacje/Spiele
+Group(pl):	X11/Aplikacje/Gry
 Source0:	ftp://sunsite.unc.edu/pub/Linux/games/arcade/tetris/%{name}123.tar.gz
-Source1:	xtrojka.desktop
-Source2:	xtrojka.png
-Patch0:		xtrojka-make.patch
-Icon:		xtrojka.gif
+Source1:	%{name}.desktop
+Source2:	%{name}.png
+Patch0:		%{name}-make.patch
+Icon:		xtrojka.xpm
 BuildRequires:	Xaw3d-devel
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -47,7 +48,8 @@ yerleþtirmeye yönelik bir oyun.
 %build
 cp XTrojka.uk XTrojka
 ./resgen
-%{__make} CFLAGS="$RPM_OPT_FLAGS -DXPM -DLINUX -DSCOREFILE='\"/var/lib/games/xtrojka.score\"' -L%%{_libdir}"
+%{__make} CFLAGS="%{!?debug:$RPM_OPT_FLAGS}%{?debug:-O -g} -DXPM -DLINUX \
+	-DSCOREFILE='\"/var/lib/games/xtrojka.score\"' -L%%{_libdir}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -62,17 +64,13 @@ install -d $RPM_BUILD_ROOT{%{_applnkdir}/Games,%{_datadir}/pixmaps,%{_bindir},%{
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Games/
 install %{SOURCE2} $RPM_BUILD_ROOT%{_datadir}/pixmaps
 
-strip --strip-unneeded $RPM_BUILD_ROOT%{_bindir}/xtrojka
-
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man6/*
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/xtrojka
+%attr(0664,root,games) %config /var/lib/games/xtrojka.score
 %{_mandir}/man6/*
-%attr(664,root,games) %config /var/lib/games/xtrojka.score
 %{_applnkdir}/Games/*
 %{_datadir}/pixmaps/*
