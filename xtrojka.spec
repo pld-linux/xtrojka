@@ -8,21 +8,6 @@ Version:	1.2.3
 Release:	16
 License:	distributable
 Group:		X11/Applications/Games
-Group(cs):	X11/Aplikace/Hry
-Group(da):	X11/Programmer/Spil
-Group(de):	X11/Applikationen/Spiele
-Group(es):	X11/Aplicaciones/Juegos
-Group(fr):	X11/Applications/Jeux
-Group(is):	X11/Forrit/Leikir
-Group(it):	X11/Applicazioni/Giochi
-Group(ja):	X11/╔╒╔в╔Й╔╠║╪╔╥╔Г╔С/╔╡║╪╔Ю
-Group(no):	X11/Applikasjoner/Spill
-Group(pl):	X11/Aplikacje/Gry
-Group(pt):	X11/AplicaГУes/Jogos
-Group(ru):	X11/Приложения/Игры
-Group(sl):	X11/Programi/Igre
-Group(sv):	X11/TillДmpningar/Spel
-Group(uk):	X11/Прикладн╕ Програми/╤гри
 Source0:	ftp://sunsite.unc.edu/pub/Linux/games/arcade/tetris/%{name}123.tar.gz
 Source1:	%{name}.desktop
 Source2:	%{name}.png
