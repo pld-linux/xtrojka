@@ -48,14 +48,14 @@ yerleþtirmeye yönelik bir oyun.
 %build
 cp XTrojka.uk XTrojka
 ./resgen
-make CFLAGS="$RPM_OPT_FLAGS -DXPM -DLINUX -DSCOREFILE='\"/var/lib/games/xtrojka.scores\"' -L%%{_libdir}"
+%{__make} CFLAGS="$RPM_OPT_FLAGS -DXPM -DLINUX -DSCOREFILE='\"/var/lib/games/xtrojka.scores\"' -L%%{_libdir}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_applnkdir}/Games,%{_datadir}/pixmaps,%{_bindir},%{_mandir}/man6} \
 	$RPM_BUILD_ROOT/var/lib/games
 
-make install \
+%{__make} install \
 	TARGET_DIR=$RPM_BUILD_ROOT%{_bindir} \
 	MANDIR=$RPM_BUILD_ROOT%{_mandir}/man6 \
 	HSFILE=$RPM_BUILD_ROOT/var/lib/games/xtrojka.score
