@@ -5,11 +5,24 @@ Summary(pl):	Gra w spadaj±ce bloki pod X Window System
 Summary(tr):	Düşen blokları yerleştirme oyunu
 Name:		xtrojka
 Version:	1.2.3
-Release:	15
+Release:	16
 License:	distributable
 Group:		X11/Applications/Games
-Group(de):	X11/Aplikacje/Spiele
+Group(cs):	X11/Aplikace/Hry
+Group(da):	X11/Programmer/Spil
+Group(de):	X11/Applikationen/Spiele
+Group(es):	X11/Aplicaciones/Juegos
+Group(fr):	X11/Applications/Jeux
+Group(is):	X11/Forrit/Leikir
+Group(it):	X11/Applicazioni/Giochi
+Group(ja):	X11/¥¢¥×¥ê¥±¡¼¥·¥ç¥ó/¥²¡¼¥à
+Group(no):	X11/Applikasjoner/Spill
 Group(pl):	X11/Aplikacje/Gry
+Group(pt):	X11/Aplicações/Jogos
+Group(ru):	X11/ğÒÉÌÏÖÅÎÉÑ/éÇÒÙ
+Group(sl):	X11/Programi/Igre
+Group(sv):	X11/Tillämpningar/Spel
+Group(uk):	X11/ğÒÉËÌÁÄÎ¦ ğÒÏÇÒÁÍÉ/¶ÇÒÉ
 Source0:	ftp://sunsite.unc.edu/pub/Linux/games/arcade/tetris/%{name}123.tar.gz
 Source1:	%{name}.desktop
 Source2:	%{name}.png
@@ -75,7 +88,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/xtrojka
-%attr(0664,root,games) %config /var/games/xtrojka.score
+%attr(0664,root,games) %config(noreplace) %verify(not size mtime md5) /var/games/xtrojka.score
 %{_mandir}/man6/*
 %{_applnkdir}/Games/*
 %{_pixmapsdir}/*
