@@ -73,4 +73,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(0664,root,games) %config /var/lib/games/xtrojka.score
 %{_mandir}/man6/*
 %{_applnkdir}/Games/*
-%{_datadir}/pixmaps/*
+%{_pixmapsdir}/*
