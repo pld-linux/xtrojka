@@ -44,7 +44,7 @@ xjewels ve tetris'e benzer þekilde, düþen bloklarý uygun þekilde
 yerleþtirmeye yönelik bir oyun.
 
 %prep
-%setup -q -n xtrojka123
+%setup -q -n %{name}123
 %patch0 -p1
 %patch1 -p1
 
@@ -73,7 +73,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/xtrojka
-%attr(0664,root,games) %config(noreplace) %verify(not size mtime md5) /var/games/xtrojka.score
+%attr(664,root,games) %config(noreplace) %verify(not md5 mtime size) /var/games/xtrojka.score
 %{_mandir}/man6/*
 %{_desktopdir}/*.desktop
 %{_pixmapsdir}/*
