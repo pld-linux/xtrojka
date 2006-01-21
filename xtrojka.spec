@@ -14,7 +14,6 @@ Source1:	%{name}.desktop
 Source2:	%{name}.png
 Patch0:		%{name}-make.patch
 Patch1:		%{name}-errno.patch
-Icon:		xtrojka.xpm
 BuildRequires:	XFree86-devel
 BuildRequires:	Xaw3d-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
