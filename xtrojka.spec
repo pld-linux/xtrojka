@@ -5,7 +5,7 @@ Summary(pl):	Gra w spadaj±ce bloki pod X Window System
 Summary(tr):	Düþen bloklarý yerleþtirme oyunu
 Name:		xtrojka
 Version:	1.2.3
-Release:	18
+Release:	19
 License:	distributable
 Group:		X11/Applications/Games
 Source0:	ftp://sunsite.unc.edu/pub/Linux/games/arcade/tetris/%{name}123.tar.gz
@@ -14,8 +14,8 @@ Source1:	%{name}.desktop
 Source2:	%{name}.png
 Patch0:		%{name}-make.patch
 Patch1:		%{name}-errno.patch
-BuildRequires:	XFree86-devel
 BuildRequires:	Xaw3d-devel
+BuildRequires:	xorg-lib-libXt-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -51,7 +51,9 @@ yerleþtirmeye yönelik bir oyun.
 cp -f XTrojka.uk XTrojka
 ./resgen
 %{__make} \
-	CFLAGS="%{rpmcflags} -DXPM -DLINUX -DSCOREFILE='\"/var/games/xtrojka.score\"' -L/usr/X11R6/%{_lib}"
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags} -DXPM -DLINUX -DSCOREFILE='\"/var/games/xtrojka.score\"'" \
+	LDFLAGS="%{rpmldflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
