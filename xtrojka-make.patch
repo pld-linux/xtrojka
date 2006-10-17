@@ -18,7 +18,7 @@
  CC=gcc
  #					used X libraries
 -XLIBS= -lXaw -lXmu -lXt -lX11 -lXext
-+XLIBS= -L/usr/X11R6/lib -lXaw3d -lXmu -lXt -lSM -lICE -lXext -lX11
++XLIBS= $(LDFLAGS) -lXaw3d -lXt -lX11
  #					some more X libraries
  RESGEN=./resgen
  
