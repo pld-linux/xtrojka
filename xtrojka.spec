@@ -1,8 +1,8 @@
 Summary:	An X Window System falling blocks game
-Summary(de.UTF-8):   Spiel mit fallenden Steinen
-Summary(fr.UTF-8):   Jeu de blocs qui tombent
-Summary(pl.UTF-8):   Gra w spadające bloki pod X Window System
-Summary(tr.UTF-8):   Düşen blokları yerleştirme oyunu
+Summary(de.UTF-8):	Spiel mit fallenden Steinen
+Summary(fr.UTF-8):	Jeu de blocs qui tombent
+Summary(pl.UTF-8):	Gra w spadające bloki pod X Window System
+Summary(tr.UTF-8):	Düşen blokları yerleştirme oyunu
 Name:		xtrojka
 Version:	1.2.3
 Release:	19
