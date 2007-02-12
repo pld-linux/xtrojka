@@ -1,8 +1,8 @@
 Summary:	An X Window System falling blocks game
-Summary(de):	Spiel mit fallenden Steinen
-Summary(fr):	Jeu de blocs qui tombent
-Summary(pl):	Gra w spadaj±ce bloki pod X Window System
-Summary(tr):	Düþen bloklarý yerleþtirme oyunu
+Summary(de.UTF-8):   Spiel mit fallenden Steinen
+Summary(fr.UTF-8):   Jeu de blocs qui tombent
+Summary(pl.UTF-8):   Gra w spadajÄ…ce bloki pod X Window System
+Summary(tr.UTF-8):   DÃ¼ÅŸen bloklarÄ± yerleÅŸtirme oyunu
 Name:		xtrojka
 Version:	1.2.3
 Release:	19
@@ -22,25 +22,25 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 The xtrojka game is an X Window System game of falling blocks, like
 Xjewel or Tetris.
 
-%description -l de
-Ähnlich wie bei xjewels oder tetris, müssen Sie in diesem Spiel die
-Spielfläche von fallenden Blöcken freihalten.
+%description -l de.UTF-8
+Ã„hnlich wie bei xjewels oder tetris, mÃ¼ssen Sie in diesem Spiel die
+SpielflÃ¤che von fallenden BlÃ¶cken freihalten.
 
-Eine Variation des süchtigmachenden Klassikers.
+Eine Variation des sÃ¼chtigmachenden Klassikers.
 
-%description -l fr
-Ce jeu est similaire à xjewels ou tetris, il faut supprimer les blocs
+%description -l fr.UTF-8
+Ce jeu est similaire Ã  xjewels ou tetris, il faut supprimer les blocs
 qui tombent dans la surface de jeu.
 
 Un variation du jeu classique.
 
-%description -l pl
-xtrojka jest gr± pod X Window System ze spadaj±cymi blokami, podobn±
+%description -l pl.UTF-8
+xtrojka jest grÄ… pod X Window System ze spadajÄ…cymi blokami, podobnÄ…
 do Xjewel albo Tetrisa.
 
-%description -l tr
-xjewels ve tetris'e benzer þekilde, düþen bloklarý uygun þekilde
-yerleþtirmeye yönelik bir oyun.
+%description -l tr.UTF-8
+xjewels ve tetris'e benzer ÅŸekilde, dÃ¼ÅŸen bloklarÄ± uygun ÅŸekilde
+yerleÅŸtirmeye yÃ¶nelik bir oyun.
 
 %prep
 %setup -q -n %{name}123
